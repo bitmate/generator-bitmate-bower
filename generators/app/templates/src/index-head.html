@@ -1,0 +1,17 @@
+
+    <!-- build:css({.tmp,client}) styles/vendor.css -->
+    <!-- bower:css -->
+    <!-- run `gulp inject` to automatically populate bower styles dependencies -->
+    <!-- endbower -->
+    <!-- endbuild -->
+
+    <!-- build:css({.tmp,client}) styles/app.css -->
+<%   if (css === 'css') { -%>
+    <!-- inject:css -->
+    <!-- css files will be automatically insert here -->
+    <!-- endinject -->
+<%   } else { -%>
+    <link rel="stylesheet" href="app/app.css"/>
+<%   } -%>
+    <!-- endbuild -->
+  </head>
