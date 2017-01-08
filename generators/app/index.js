@@ -21,6 +21,11 @@ module.exports = bitmate.Base.extend({
         }
       };
 
+      this.updateJson('bower.json', bower => {
+        dependencies = bower.dependencies;
+        return bower;
+      });
+
       if (this.options.client === 'angular1') {
         pkg.devDependencies['gulp-angular-filesort'] = '^1.1.1';
         devDependencies['angular-mocks'] = dependencies.angular;

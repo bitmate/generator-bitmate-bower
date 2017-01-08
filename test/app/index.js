@@ -36,19 +36,22 @@ test.beforeEach(() => {
   context.updateJson['package.json'] = {
     dependencies: {}
   };
+  context.updateJson['bower.json'] = {
+    dependencies: {}
+  };
   context.copyTemplate.gulp_tasks = null; // eslint-disable-line camelcase
 });
 
-test(`Delete dependencies from 'package.json'`, t => {
-  Utils.call(context, 'configuring.pkg', {client: 'angular1'});
-  t.deepEqual(context.updateJson['package.json'], {});
-});
+// test.only(`Get dependencies from 'bower.json'`, t => {
+//   Utils.call(context, 'configuring.pkg', {client: 'angular1'});
+//   t.deepEqual(context.updateJson['bower.json'], {});
+// });
 
 test(`Add 'gulp-angular-filesort' to package.json and set bower.json`, t => {
   const expectedPkg = _.merge(pkg, {
     devDependencies: {'gulp-angular-filesort': '^1.1.1'}
   });
-  context.updateJson['package.json'] = {
+  context.updateJson['bower.json'] = {
     dependencies: {angular: '^1.5.0'}
   };
   Utils.call(context, 'configuring.pkg', {client: 'angular1', js: 'js'});
@@ -64,7 +67,7 @@ test(`Add 'gulp-typescript' to package.json and set bower.json`, t => {
   const expectedPkg = _.merge(pkg, {
     devDependencies: {'gulp-typescript': '^2.10.0'}
   });
-  context.updateJson['package.json'] = {
+  context.updateJson['bower.json'] = {
     dependencies: {angular: '^2.0.0-rc.3'}
   };
   Utils.call(context, 'configuring.pkg', {client: 'angular2', js: 'typescript'});
