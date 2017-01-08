@@ -6,14 +6,8 @@ const transforms = require('./transforms');
 module.exports = bitmate.Base.extend({
   configuring: {
     pkg() {
-      let dependencies;
+      let dependencies = {};
       const devDependencies = {};
-
-      this.updateJson('package.json', packageJson => {
-        dependencies = packageJson.dependencies;
-        delete packageJson.dependencies;
-        return packageJson;
-      });
 
       const pkg = {
         devDependencies: {
