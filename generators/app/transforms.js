@@ -3,7 +3,7 @@
 const path = require('path');
 
 module.exports = function transforms() {
-  this.replaceInFiles('src/**/*.{js,ts,tsx}', (content, fileName) => {
+  this.replaceInFiles('client/**/*.{js,ts,tsx}', (content, fileName) => {
     const baseName = path.basename(fileName, path.extname(fileName));
     const reactComponentName = baseName.substr(0, 1).toUpperCase() + baseName.substr(1);
     // replace es2015 import of react-router
@@ -17,7 +17,7 @@ module.exports = function transforms() {
     result = result.replace(/.*require\(.*\);\n\n?/g, '');
     // add TS reference in files which doesn't have one
     if (this.options.js === 'typescript') {
-      const relativeFilePath = path.relative(this.destinationPath('src'), fileName);
+      const relativeFilePath = path.relative(this.destinationPath('client'), fileName);
       const relativePath = relativeFilePath.split('/').map(() => '../').join('');
       result = result.replace(
         /^(?!\/\/\/ <reference path=)/g,

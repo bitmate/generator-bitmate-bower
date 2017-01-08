@@ -15,7 +15,12 @@ function inject() {
   const injectStyles = gulp.src(conf.path.client('**/*.css'), {read: false});
 <% } -%>
   const injectScripts = gulp.src([
+    <% if (client === 'react') { -%>
+    conf.path.tmp('**/!(app).js'),
+    conf.path.tmp('**/app.js'),
+    <% } else if (client === 'angular1') { -%>
     conf.path.tmp('**/*.js'),
+    <% } -%>
     `!${conf.path.tmp('**/*.spec.js')}`
 <% if (client === 'angular1') { -%>
   ])
