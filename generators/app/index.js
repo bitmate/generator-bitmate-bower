@@ -37,10 +37,6 @@ module.exports = bitmate.Base.extend({
 
       this.mergeJson('package.json', pkg);
 
-      if (this.options.client === 'react') {
-        delete dependencies['react-dom'];
-      }
-
       this.mergeJson('bower.json', {
         name: 'bitmate-bower',
         version: '1.0.0',
