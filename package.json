@@ -6,9 +6,8 @@
   "repository": "oligibson/generator-bitmate-bower",
   "author": "BitMate",
   "license": "UNLICENSED",
-  "private": true,
   "dependencies": {
-    "bitmate-generator": "file:../bitmate-generator"
+    "bitmate-generator": "^1.0.0"
   },
   "devDependencies": {
     "ava": "^0.16.0",
@@ -44,5 +43,8 @@
   },
   "eslintConfig": {
     "extends": "xo-space/esnext"
+  },
+  "publishConfig": {
+    "registry": "http://sinopia.bitmate.io/"
   }
 }
