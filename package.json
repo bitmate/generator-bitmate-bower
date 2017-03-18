@@ -1,13 +1,13 @@
 {
   "name": "generator-bitmate-bower",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "BitMate generator for handling Bower config",
   "main": "index.js",
   "repository": "oligibson/generator-bitmate-bower",
   "author": "BitMate",
   "license": "UNLICENSED",
   "dependencies": {
-    "bitmate-generator": "^1.0.1"
+    "bitmate-generator": "^1.0.2"
   },
   "devDependencies": {
     "ava": "^0.16.0",
