@@ -1,5 +1,5 @@
 const test = require('ava');
-const Utils = require('bitmate-generator').TestUtils;
+const Utils = require('@oligibson/bitmate-generator').TestUtils;
 const context = Utils.mock('app');
 
 test.before(() => {

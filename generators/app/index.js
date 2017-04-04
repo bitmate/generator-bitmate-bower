@@ -1,6 +1,6 @@
 'use strict';
 
-const bitmate = require('bitmate-generator');
+const bitmate = require('@oligibson/bitmate-generator');
 const transforms = require('./transforms');
 
 module.exports = bitmate.Base.extend({
