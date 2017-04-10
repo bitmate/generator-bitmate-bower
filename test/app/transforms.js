@@ -1,9 +1,10 @@
+const path = require('path');
 const test = require('ava');
 const Utils = require('@oligibson/bitmate-generator').TestUtils;
 const context = Utils.mock('app');
 
 test.before(() => {
-  process.chdir('../../');
+  process.chdir(path.resolve(__dirname, '../../'));
 });
 
 test('Run transforms()', t => {

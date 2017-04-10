@@ -1,5 +1,6 @@
 'use strict';
 
+const path = require('path');
 const chai = require('chai');
 const expect = chai.expect;
 const spies = require('chai-spies');
@@ -11,10 +12,10 @@ const Utils = require('@oligibson/bitmate-generator').TestUtils;
 let context;
 const pkg = {
   devDependencies: {
-    'bower': '^1.7.9',
-    'gulp-inject': '^3.0.0',
-    'main-bower-files': '^2.9.0',
-    'wiredep': '^4.0.0'
+    bower: '1.8.0',
+    wiredep: '4.0.0',
+    'gulp-inject': '4.2.0',
+    'main-bower-files': '2.13.1'
   },
   scripts: {
     bower: 'bower'
@@ -29,7 +30,7 @@ const bower = {
 test.before(() => {
   context = Utils.mock('app');
   require('../../generators/app/index');
-  process.chdir('../../');
+  process.chdir(path.resolve(__dirname, '../../'));
 });
 
 test.beforeEach(() => {
@@ -49,7 +50,7 @@ test.beforeEach(() => {
 
 test(`Add 'gulp-angular-filesort' to package.json and set bower.json`, t => {
   const expectedPkg = _.merge(pkg, {
-    devDependencies: {'gulp-angular-filesort': '^1.1.1'}
+    devDependencies: {'gulp-angular-filesort': '1.1.1'}
   });
   context.updateJson['bower.json'] = {
     dependencies: {angular: '^1.5.0'}
@@ -65,7 +66,7 @@ test(`Add 'gulp-angular-filesort' to package.json and set bower.json`, t => {
 
 test(`Add 'gulp-typescript' to package.json and set bower.json`, t => {
   const expectedPkg = _.merge(pkg, {
-    devDependencies: {'gulp-typescript': '^2.10.0'}
+    devDependencies: {'gulp-typescript': '^3.1.5'}
   });
   context.updateJson['bower.json'] = {
     dependencies: {angular: '^2.0.0-rc.3'}

@@ -1,4 +1,4 @@
-'use strict';
+/* eslint func-names: 0 */  // --> OFF
 
 const path = require('path');
 

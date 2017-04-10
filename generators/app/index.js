@@ -11,10 +11,10 @@ module.exports = bitmate.Base.extend({
 
       const pkg = {
         devDependencies: {
-          'bower': '^1.7.9',
-          'gulp-inject': '^3.0.0',
-          'main-bower-files': '^2.9.0',
-          'wiredep': '^4.0.0'
+          bower: '1.8.0',
+          wiredep: '4.0.0',
+          'gulp-inject': '4.2.0',
+          'main-bower-files': '2.13.1'
         },
         scripts: {
           bower: 'bower'
@@ -27,12 +27,12 @@ module.exports = bitmate.Base.extend({
       });
 
       if (this.options.client === 'angular1') {
-        pkg.devDependencies['gulp-angular-filesort'] = '^1.1.1';
+        pkg.devDependencies['gulp-angular-filesort'] = '1.1.1';
         devDependencies['angular-mocks'] = dependencies.angular;
       }
 
       if (this.options.js === 'typescript') {
-        pkg.devDependencies['gulp-typescript'] = '^2.10.0';
+        pkg.devDependencies['gulp-typescript'] = '^3.1.5';
       }
 
       this.mergeJson('package.json', pkg);
