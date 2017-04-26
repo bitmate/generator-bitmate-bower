@@ -10,5 +10,5 @@ exports.wiredep = {
 <% if (css === 'scss') { -%>
   exclude: [/\/bootstrap\.js$/, /\/bootstrap-sass\/.*\.js/, /\/bootstrap\.css/],
 <% } -%>
-  directory: 'bower_components'
+  directory: 'client/bower_components'
 };

@@ -57,6 +57,10 @@ module.exports = bitmate.Base.extend({
       );
     },
 
+    bower() {
+      this.copyTemplate('src/.bowerrc', '.bowerrc', this.props);
+    },
+
     indexHtml() {
       this.replaceInFileWithTemplate(
         this.templatePath('conf/gulp.conf.js'),

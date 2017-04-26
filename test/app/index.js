@@ -95,6 +95,13 @@ test('Copy inject.js and scripts.js', t => {
   t.true(context.copyTemplate['gulp_tasks/scripts.js'].length > 0);
 });
 
+test('Copy .bowerrc', t => {
+  context.templatePath = path => path;
+  context.destinationPath = path => path;
+  Utils.call(context, 'writing.bower');
+  t.true(context.copyTemplate['.bowerrc'].length > 0);
+});
+
 test('Call indexHtml 3 times', () => {
   context.templatePath = context.destinationPath = path => path;
   context.replaceInFileWithTemplate = () => {};
